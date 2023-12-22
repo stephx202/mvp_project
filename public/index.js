@@ -3,8 +3,19 @@ $(document).ready(()=>{
     //call to /journal to check if getting data on console
     $.get('/journal', (data)=>{
         console.log(data);
+        //for the entries form drop down list
         titleOptions(data)
+        
     })
+    //event listenr to change based on of the value (aka option) changes
+    $('#selectTitle').change(() => {
+        const selectedTitle = $('#selectTitle').val();
+        if (selectedTitle) {
+            //encode the selected title to successfully request data
+            const encodeSelectedTitle = encodeURIComponent(selectedTitle);
+            selectedTitleData(encodeSelectedTitle);
+        }
+    });
 
 
 })
@@ -14,7 +25,7 @@ const titleOptions = (titles)=>{
     const selectTitle = $('#selectTitle');
     selectTitle.empty();
 
-    //for each title, will be an option on entries form
+    //for each title, create an option
     titles.forEach((entry)=>{
         selectTitle.append($('<option>',{
             value: entry.title,
@@ -29,10 +40,26 @@ const titleOptions = (titles)=>{
 const selectedTitleData = (selectedTitle)=>{
     $.get(`/journal/${selectedTitle}`, (data)=>{
         console.log(data);
+        displayEntryData(data)
     });
 };
 
 //function to display data of selected title on the page
-const displayTitleData = (titleData)=>{
-}
 //need to encode title that was selected
+const displayEntryData = (entryData)=>{
+    let entryDataContainer = $('#entryDataContainer');
+    
+    entryDataContainer.empty();
+
+    let entryContainer = $('<div>').addClass('entryContainerClass');
+
+    let titleDiv = $('<div>').text(`Title: ${entryData.title}`);
+    let affirmationDiv = $('<div>').text(`affirmation: ${entryData.affirmation}`);
+    let gratefulForDiv = $('<div>').text(`grateful for: ${entryData.grateful_for}`);
+    let goodThingsDiv = $('<div>').text(`good things: ${entryData.good_thing}`);
+    let positiveThoughtsDiv = $('<div>').text(`positive thoughts: ${entryData.positive_thought}`);
+
+    entryContainer.append(titleDiv, affirmationDiv, gratefulForDiv, goodThingsDiv, positiveThoughtsDiv);
+    entryDataContainer.append(entryContainer);
+
+}
