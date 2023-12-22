@@ -32,12 +32,30 @@ app.get('/journal', (req, res)=>{
         res.status(200).send(result.rows)
     })
     .catch((error)=>{
-        console.errorZ(error);
+        console.error(error);
         res.status(500).send('error sending data')
     })
 })
 
+//get request route to get data based on the title. response with all contents within same row
+app.get('/journal/:title', (req, res)=>{
+    const selectedTitle = req.params.title;
 
+    pool.query('SELECT * FROM journal WHERE title = $1', [selectedTitle])
+        .then((result)=>{
+            if(result.rows.length > 0){
+                res.send(result.rows[0]);
+             }else{
+                 res.status(404).send("Title not found")
+             }
+        })
+        .catch((error)=>{
+            console.error(error);
+            res.status(500).send('This is an internal issue. Error getting data at', selectedTitle)
+        })
+
+
+})
 
 
 
