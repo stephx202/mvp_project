@@ -1,0 +1,98 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(backgroundMVP.jpg);
+    background-position: center;
+    background-size:cover;
+
+
+}
+ #entries{
+    background-color: #ebe4d5 ;
+    font-family: 'Quicksand', sans-serif;
+    
+    border-radius: 1.5vw;
+ }
+
+ #selectTitle{
+    background-color: #ebe4d5;
+    font-family: 'Quicksand', sans-serif;
+    border: none;
+    border-radius: 1.5vw;
+ }
+
+
+#entryDataContainer{
+    margin-top: 3vh;
+    padding: 5vw;
+}
+
+
+.entryContainerClass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width:fit-content;
+    height: fit-content;
+    padding: 5vh;
+    padding-top: 10%;
+    padding-bottom: 20%;
+    box-shadow:0 .5vh 0vw #cbb893;
+    border-radius: 1vw;
+    background-image: url(paperBackground.png);
+    background-position: center;
+    background-size:cover;
+    overflow: hidden;
+
+    
+    
+}
+
+#titleID{
+    background-color: #ebe4d5;
+    padding: 3vw;
+    margin-top: 2vh;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    border-radius: 1.5vw;
+    box-shadow:0 .5px 8px #cbb893;
+    font-size: 22px;
+}
+
+#affirmationID{
+    background-color: #ebe4d5;
+    padding: 3vw;
+    margin-top: 4vh;
+    border-radius: 1.5vw;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow:0 .5px 8px #cbb893;}
+
+#gratefulForID{
+    background-color: #ebe4d5;
+    padding: 3vw;
+    margin-top: 3vh;
+    border-radius: 1.5vw;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow:0 .5px 8px #cbb893;}
+
+#goodThingsID{
+    background-color: #ebe4d5;
+    padding: 3vw;
+    margin-top: 3vh;
+    border-radius: 1.5vw;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow:0 .5px 8px #cbb893;
+    
+}
+
+#positiveThoughtsID{
+    background-color: #ebe4d5;
+    padding: 3vw;
+    margin-top: 3vh;
+    border-radius: 1.5vw;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow:0 .5px 8px #cbb893;
+}

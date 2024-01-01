@@ -7,7 +7,10 @@ $(document).ready(()=>{
         titleOptions(data)
         
     })
+
+    
     //event listenr to change based on of the value (aka option) changes
+    
     $('#selectTitle').change(() => {
         const selectedTitle = $('#selectTitle').val();
         if (selectedTitle) {
@@ -53,11 +56,11 @@ const displayEntryData = (entryData)=>{
 
     let entryContainer = $('<div>').addClass('entryContainerClass');
 
-    let titleDiv = $('<div>').text(`Title: ${entryData.title}`);
-    let affirmationDiv = $('<div>').text(`affirmation: ${entryData.affirmation}`);
-    let gratefulForDiv = $('<div>').text(`grateful for: ${entryData.grateful_for}`);
-    let goodThingsDiv = $('<div>').text(`good things: ${entryData.good_thing}`);
-    let positiveThoughtsDiv = $('<div>').text(`positive thoughts: ${entryData.positive_thought}`);
+    let titleDiv = $('<div>').text(`Title: ${entryData.title}`).attr('id', 'titleID');
+    let affirmationDiv = $('<div>').text(`Affirmation for today: ${entryData.affirmation}`).attr('id', 'affirmationID');
+    let gratefulForDiv = $('<div>').text(`What I am grateful for: ${entryData.grateful_for}`).attr('id', 'gratefulForID');
+    let goodThingsDiv = $('<div>').text(`Good things that happened today: ${entryData.good_thing}`).attr('id', 'goodThingsID');
+    let positiveThoughtsDiv = $('<div>').text(`Positive thoughts to carry out: ${entryData.positive_thought}`).attr('id', 'positiveThoughtsID');
 
     entryContainer.append(titleDiv, affirmationDiv, gratefulForDiv, goodThingsDiv, positiveThoughtsDiv);
     entryDataContainer.append(entryContainer);
