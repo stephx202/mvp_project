@@ -46,7 +46,9 @@ body{
 
 #entryDataContainer{
     margin-top: 3vh;
-    padding: 5vw;
+    padding: 1vw;
+    background-image: url(journalCoverBackground.png);
+    border-radius: 1.5vw;
 }
 
 

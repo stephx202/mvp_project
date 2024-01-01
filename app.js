@@ -56,8 +56,19 @@ app.get('/journal/:title', (req, res)=>{
 
 
 })
-
-
+//post request to add a new journal entry to the database
+app.post('/journal', (req, res)=>{
+    const {title, affirmation, grateful_for, good_thing, positive_thought} = req.body;
+    console.log('recieved data', req.body);
+    pool.query('INSERT INTO journal (title, affirmation, grateful_for, good_thing, positive_thought) VALUES ($1, $2, $3, $4, $5)', [title, affirmation, grateful_for, good_thing, positive_thought])
+    .then((result)=>{
+        res.status(200).json(result.rows[0])
+    })
+    .catch((error)=>{
+        console.error(error)
+        res.status(500).send("Error adding journal entry to the database")
+    })
+})
 
 
 
