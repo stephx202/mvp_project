@@ -1,4 +1,15 @@
 $(document).ready(()=>{
+    //hide the rest of the code for now until button clicked to open journal
+    $('#entries').hide();
+    $('#entryDataContainer').hide();
+
+    //event listener for button being clicked to open journal
+    $('#openJournalButton').click(()=>{
+        $('#OpenJournalCover').hide();
+        $('#openJournalButton').hide();
+        $('#entries').show();
+        $('#entryDataContainer').show();
+    })
 
     //call to /journal to check if getting data on console
     $.get('/journal', (data)=>{
@@ -8,7 +19,7 @@ $(document).ready(()=>{
         
     })
 
-    
+
     //event listenr to change based on of the value (aka option) changes
     
     $('#selectTitle').change(() => {

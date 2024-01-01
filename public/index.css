@@ -9,6 +9,26 @@ body{
 
 
 }
+#JournalCover{
+    position: relative;
+
+}
+#OpenJournalCover{
+    width: 765.75px;
+    height: 878.95px;
+    border-radius: 1.5vw;
+    display:block;
+}
+
+#openJournalButton{
+    position:absolute;
+    top:67%;
+    left: 20%;
+    width: 400px;
+    height: 75px;
+    opacity: 0;
+}
+
  #entries{
     background-color: #ebe4d5 ;
     font-family: 'Quicksand', sans-serif;
@@ -45,6 +65,7 @@ body{
     background-image: url(paperBackground.png);
     background-position: center;
     background-size:cover;
+    background-repeat: no-repeat;
     overflow: hidden;
 
     
