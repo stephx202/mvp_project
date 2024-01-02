@@ -1,8 +1,8 @@
 //dependencies. import dotenv after to deploy
 import express from 'express';
 import path from 'path';
-import pg from 'pg'
-
+import pg from 'pg';
+import 'dotenv/config';
 
 
 //port number
@@ -13,13 +13,17 @@ const{Pool} = pg;
 const app = express();
 app.use(express.json())
 
+
+const connectionString = process.env.PG_DATABASE_URL;
+console.log(connectionString)
 //for pool. replace with connection string after to deploy
 const pool = new Pool ({
-    user: 'stephx202',
-    password: '2024',
-    host: 'localhost',
-    database: 'journaldb',
-    port: 5432
+    // user: 'stephx202',
+    // password: '2024',
+    // host: 'localhost',
+    // database: 'journaldb',
+    // port: 5432
+    connectionString
 })
 
 //link public folder
