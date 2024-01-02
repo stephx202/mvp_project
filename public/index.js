@@ -2,7 +2,9 @@ $(document).ready(()=>{
     //hide the rest of the code for now until button clicked to open journal
     $('#entries').hide();
     $('#entryDataContainer').hide();
+    $('#createEntryButton').hide();
     $('#newEntryContainer').hide();
+
 
     //event listener for button being clicked to open journal
     $('#openJournalButton').click(()=>{
@@ -12,6 +14,7 @@ $(document).ready(()=>{
         $('#entries').show();
         $('#entryDataContainer').show();
         $('#newEntryContainer').show();
+
         
     })
 
@@ -29,6 +32,10 @@ $(document).ready(()=>{
     $('#selectTitle').change(() => {
         //hide new entry form
         $('#newEntryContainer').hide();
+        //show createEntryButton button
+        $('#createEntryButton').show();
+        $('#entryDataContainer').show();
+
         const selectedTitle = $('#selectTitle').val();
         if (selectedTitle) {
             //encode the selected title to successfully request data
@@ -64,6 +71,13 @@ $(document).ready(()=>{
         })
     })
 
+
+    //event listener createEntryButton button to dislplay newEntryContainer after selecting an entry. (if user changes their mind and wants to add an entry instead of viewing others')
+    $('#createEntryButton').click((event)=>{
+        $('#entryDataContainer').hide();
+        $('#newEntryContainer').show();
+        $('#createEntryButton').hide();
+    })
 })
 
 //function to display title of entries on the entries form
