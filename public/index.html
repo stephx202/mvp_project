@@ -28,27 +28,26 @@
         <label for = "entry">Journal Entries from others:</label>
         <select id = "selectTitle"></select>
     </form>
+    <button type="button" id="createEntryButton">Create an entry</button>
 
     <div id="entryDataContainer" class="entryDataContainerClass"></div>
-
-    <button type="button" id="createEntryButton">Create an entry</button>
 
     <div id="newEntryContainer">
         <form id="entryForm">
             <label for="newTitle">Title:</label>
-            <textarea id="newTitle" name="title"></textarea>
+            <textarea id="newTitle" name="title" required></textarea>
             
             <label for= "newAffirmation">Affirmation for today:</label>
-            <textarea id="newAffirmation" name="affirmation"></textarea>
+            <textarea id="newAffirmation" name="affirmation" required></textarea>
 
             <label for="newGratefulFor">What I am grateful for:</label>
-            <textarea id="newGratefulFor" name="grateful_for"></textarea>
+            <textarea id="newGratefulFor" name="grateful_for" required></textarea>
 
             <label for="newGoodThing">Good things that happened today:</label>
-            <textarea id="newGoodThing" name="good_thing"></textarea>
+            <textarea id="newGoodThing" name="good_thing" required></textarea>
 
             <label for="positiveThought">Positive thoughts to carry out:</label>
-            <textarea id="positiveThought" name="positive_thought"></textarea>
+            <textarea id="positiveThought" name="positive_thought" required></textarea>
 
             <button type="submit" id="addEntryButton">Add to journal</button>
         </form>

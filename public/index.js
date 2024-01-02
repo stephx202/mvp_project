@@ -12,7 +12,7 @@ $(document).ready(()=>{
         $('#openJournalButton').hide();
         $('footer').hide();
         $('#entries').show();
-        $('#entryDataContainer').show();
+        // $('#entryDataContainer').show();
         $('#newEntryContainer').show();
 
         
@@ -57,7 +57,14 @@ $(document).ready(()=>{
             good_thing: $('#newGoodThing').val(),
             positive_thought: $('#positiveThought').val(),
         }
-        console.log('Submitted data:', postNewData)
+        console.log('Submitted data:', postNewData);
+
+         // Empty the text in textareas
+        $('#newTitle').val('');
+        $('#newAffirmation').val('');
+        $('#newGratefulFor').val('');
+        $('#newGoodThing').val('');
+        $('#positiveThought').val('');
 
 
     //POST request to add an entry to the journal.

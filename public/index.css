@@ -18,6 +18,8 @@ body{
     height: 878.95px;
     border-radius: 1.5vw;
     display:block;
+    box-shadow:10px 50px 50px #485123;
+
 }
 
 #openJournalButton{
@@ -50,6 +52,7 @@ body{
     padding: 1vw;
     background-image: url(journalCoverBackground.png);
     border-radius: 1.5vw;
+
 }
 
 
@@ -92,7 +95,8 @@ body{
     margin-top: 4vh;
     border-radius: 1.5vw;
     font-family: 'Quicksand', sans-serif;
-    box-shadow:0 .5px 8px #cbb893;}
+    box-shadow:0 .5px 8px #cbb893;
+}
 
 #gratefulForID{
     background-color: #ebe4d5;
@@ -119,4 +123,88 @@ body{
     border-radius: 1.5vw;
     font-family: 'Quicksand', sans-serif;
     box-shadow:0 .5px 8px #cbb893;
+}
+
+
+#newEntryContainer{
+    margin-top: 3vh;
+    padding: 1vw;
+    background-image: url(journalCoverBackground.png);
+    border-radius: 1.5vw;
+}
+
+
+#entryForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width:fit-content;
+    height: fit-content;
+    padding: 5vh;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    box-shadow:0 .5vh 0vw #cbb893;
+    border-radius: 1vw;
+    background-image: url(paperBackground.png);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+label{
+    padding-top: 30px;
+}
+
+textarea{
+    outline: none;
+    resize: none;
+    border: 1px solid #ebe4d5;
+    box-shadow:0 .5px 8px #cbb893;
+
+    background-color: #ebe4d5;
+    width: 480px;
+    height: 30px;
+    padding: 3vw;
+    margin-top: 2vh;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    border-radius: 1.5vw;
+    box-shadow:0 .5px 8px #cbb893;
+    font-size: 18px;
+}
+
+#addEntryButton{
+    background-color: #ebe4d5;
+    width:fit-content;
+    height:fit-content;
+    margin-top: 10%;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    border-radius: 1.5vw;
+    box-shadow:0 .5px 8px #cbb893;
+    font-size: 14px;
+    border-color: #ebe4d5;
+}
+
+#createEntryButton{
+    background-color: #ebe4d5;
+    width:fit-content;
+    height:fit-content;
+    margin-top: 5%;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    border-radius: 1.5vw;
+    /* box-shadow:0 .5px 8px #cbb893; */
+    font-size: 14px;
+    border-color: #ebe4d5;
+}
+
+footer{
+    margin-top: 20%;
+    color:white;
 }
