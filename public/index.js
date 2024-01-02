@@ -27,6 +27,8 @@ $(document).ready(()=>{
     //event listener to change based on of the value (aka option) changes
     
     $('#selectTitle').change(() => {
+        //hide new entry form
+        $('#newEntryContainer').hide();
         const selectedTitle = $('#selectTitle').val();
         if (selectedTitle) {
             //encode the selected title to successfully request data
@@ -37,7 +39,20 @@ $(document).ready(()=>{
 
 
 
-    //event listener to submit new entry to the journal.
+    //event listener to store user's text values and submit new entry to the journal (for POST request).
+    $('#entryForm').submit((event)=>{
+        event.preventDefault();
+
+        let postNewData = {
+            title: $('#newTitle').val(),
+            affirmation: $('#newAffirmation').val(),
+            grateful_for: $('#newGratefulFor').val(),
+            good_thing: $('#newGoodThing').val(),
+            positive_thought: $('#positiveThought').val(),
+        }
+        console.log('Submitted data:', postNewData)
+    })
+
 
     //POST request to add an entry to the journal.
 
