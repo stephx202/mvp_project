@@ -52,6 +52,7 @@ body{
     padding: 1vw;
     background-image: url(journalCoverBackground.png);
     border-radius: 1.5vw;
+    box-shadow:10px 50px 50px #485123;
 
 }
 
@@ -131,6 +132,7 @@ body{
     padding: 1vw;
     background-image: url(journalCoverBackground.png);
     border-radius: 1.5vw;
+    box-shadow:10px 50px 50px #485123;
 }
 
 
