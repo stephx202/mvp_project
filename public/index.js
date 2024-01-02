@@ -2,13 +2,17 @@ $(document).ready(()=>{
     //hide the rest of the code for now until button clicked to open journal
     $('#entries').hide();
     $('#entryDataContainer').hide();
+    $('#newEntryContainer').hide();
 
     //event listener for button being clicked to open journal
     $('#openJournalButton').click(()=>{
         $('#OpenJournalCover').hide();
         $('#openJournalButton').hide();
+        $('footer').hide();
         $('#entries').show();
         $('#entryDataContainer').show();
+        $('#newEntryContainer').show();
+        
     })
 
     //call to /journal to check if getting data on console
@@ -20,7 +24,7 @@ $(document).ready(()=>{
     })
 
 
-    //event listenr to change based on of the value (aka option) changes
+    //event listener to change based on of the value (aka option) changes
     
     $('#selectTitle').change(() => {
         const selectedTitle = $('#selectTitle').val();
@@ -30,6 +34,12 @@ $(document).ready(()=>{
             selectedTitleData(encodeSelectedTitle);
         }
     });
+
+
+
+    //event listener to submit new entry to the journal.
+
+    //POST request to add an entry to the journal.
 
 
 })

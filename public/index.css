@@ -32,7 +32,8 @@ body{
  #entries{
     background-color: #ebe4d5 ;
     font-family: 'Quicksand', sans-serif;
-    
+    width: fit-content;
+    height: fit-content;
     border-radius: 1.5vw;
  }
 

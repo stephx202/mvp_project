@@ -23,13 +23,39 @@
 
 
 
-    <p>hello world!</p>
+    
     <form id="entries">
         <label for = "entry">Journal Entries from others:</label>
         <select id = "selectTitle"></select>
     </form>
 
-
     <div id="entryDataContainer" class="entryDataContainerClass"></div>
+
+    <div id="newEntryContainer">
+        <form id="entryForm">
+            <label for="newTitle">Title:</label>
+            <textarea id="newTitle" name="title"></textarea>
+            
+            <label for= "newAffirmation">Affirmation for today:</label>
+            <textarea id="newAffirmation" name="affirmation"></textarea>
+
+            <label for="newGratefulFor">What I am grateful for:</label>
+            <textarea id="newGratefulFor" name="grateful_for"></textarea>
+
+            <label for="newGoodThing">Good things that happened today:</label>
+            <textarea id="newGoodThing" name="good_thing"></textarea>
+
+            <label for="positiveThought">Positive thoughts to carry out:</label>
+            <textarea id="positiveThought" name="positive_thought"></textarea>
+
+            <button type="submit">Add to journal</button>
+        </form>
+    </div>
+
 </body>
+<footer>
+    <p>Contact Info:
+        stephhernandez202@gmail.com
+    </p>
+</footer>
 </html>
