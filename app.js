@@ -6,7 +6,7 @@ import 'dotenv/config';
 
 
 //port number
-const expressPort = 8003;
+const PORT= process.env.PORT;
 
 //create connection string variable after to deploy
 const{Pool} = pg;
@@ -73,12 +73,24 @@ app.post('/journal', (req, res)=>{
         res.status(500).send("Error adding journal entry to the database")
     })
 })
-
+//delete request to delete a journal entry from the journal database
+app.delete('/journal/:title', (req, res)=>{
+    const selectedTitle = req.params.title;
+    console.log('deleted entry titled: ', selectedTitle)
+    pool.query('DELETE FROM journal WHERE title = $1', [selectedTitle])
+    .then((result)=>{
+        res.status(200).send("entry deleted");
+    })
+    .catch((error)=>{
+        console.error(error);
+        res.status(404).send("Error deleting journal entry.");
+    });
+});
 
 
 
 //listen on port
-app.listen(expressPort, ()=>{
-    console.log('listening on port', expressPort)
+app.listen(PORT, ()=>{
+    console.log('listening on port', PORT)
 })
 
