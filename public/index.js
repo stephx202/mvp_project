@@ -51,11 +51,18 @@ $(document).ready(()=>{
             positive_thought: $('#positiveThought').val(),
         }
         console.log('Submitted data:', postNewData)
-    })
 
 
     //POST request to add an entry to the journal.
-
+        $.post({
+            url: '/journal',
+            contentType: 'application/json',
+            data: JSON.stringify(postNewData),
+            success: function(data){
+                console.log('New entry has been successfully added to the journal: ', data);
+            }
+        })
+    })
 
 })
 
