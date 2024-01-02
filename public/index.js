@@ -1,10 +1,12 @@
 $(document).ready(()=>{
+
+    let encodeSelectedTitle; 
     //hide the rest of the code for now until button clicked to open journal
     $('#entries').hide();
     $('#entryDataContainer').hide();
     $('#createEntryButton').hide();
     $('#newEntryContainer').hide();
-
+    $('#deleteButton').hide();
 
     //event listener for button being clicked to open journal
     $('#openJournalButton').click(()=>{
@@ -29,17 +31,19 @@ $(document).ready(()=>{
 
     //event listener to change based on of the value (aka option) changes
     
-    $('#selectTitle').change(() => {
+    $('#selectTitle').click(() => {
         //hide new entry form
+
         $('#newEntryContainer').hide();
         //show createEntryButton button
         $('#createEntryButton').show();
         $('#entryDataContainer').show();
+        $('#deleteButton').show();
 
         const selectedTitle = $('#selectTitle').val();
         if (selectedTitle) {
             //encode the selected title to successfully request data
-            const encodeSelectedTitle = encodeURIComponent(selectedTitle);
+            encodeSelectedTitle = encodeURIComponent(selectedTitle);
             selectedTitleData(encodeSelectedTitle);
         }
     });
@@ -85,6 +89,21 @@ $(document).ready(()=>{
         $('#newEntryContainer').show();
         $('#createEntryButton').hide();
     })
+
+
+    //event listener deleteButton to delete the entry
+    $('#deleteButton').click((event)=>{
+        //delete selected title
+        $.ajax({
+            url: `/journal/${encodeSelectedTitle}`,
+            type: 'DELETE', //type of http method. (contentType is for the type of data being sent)
+            success: function(result){
+                console.log(`successfully deleted: ${result}`)
+            }
+
+        })
+    })
+    
 })
 
 //function to display title of entries on the entries form
