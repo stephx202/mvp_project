@@ -7,6 +7,7 @@ $(document).ready(()=>{
     $('#createEntryButton').hide();
     $('#newEntryContainer').hide();
     $('#deleteButton').hide();
+    $('#alertPopup').hide();
 
     //event listener for button being clicked to open journal
     $('#openJournalButton').click(()=>{
@@ -31,9 +32,9 @@ $(document).ready(()=>{
 
     //event listener to change based on of the value (aka option) changes
     
-    $('#selectTitle').click(() => {
+    $('#selectTitle').change(() => {
         //hide new entry form
-
+        
         $('#newEntryContainer').hide();
         //show createEntryButton button
         $('#createEntryButton').show();
@@ -93,15 +94,27 @@ $(document).ready(()=>{
 
     //event listener deleteButton to delete the entry
     $('#deleteButton').click((event)=>{
+        //alert user it has been deleted by using a div
+        $('#alertPopup').show()
         //delete selected title
         $.ajax({
             url: `/journal/${encodeSelectedTitle}`,
             type: 'DELETE', //type of http method. (contentType is for the type of data being sent)
             success: function(result){
                 console.log(`successfully deleted: ${result}`)
+
+                $('#entryDataContainer').hide();
+                $('#deleteButton').hide();
+                $('#newEntryContainer').show();
+
+                //to hide alertPopup after 2 seconds
+                $('#alertPopup').fadeOut(3000)
             }
 
         })
+
+
+
     })
     
 })

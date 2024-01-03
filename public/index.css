@@ -201,7 +201,6 @@ textarea{
     font-family: 'Quicksand', sans-serif;
     font-style: oblique;
     border-radius: 1.5vw;
-    /* box-shadow:0 .5px 8px #cbb893; */
     font-size: 14px;
     border-color: #ebe4d5;
 }
@@ -209,4 +208,28 @@ textarea{
 footer{
     margin-top: 20%;
     color:white;
+}
+
+#deleteButton{
+    background-color: #ebe4d5;
+    width:fit-content;
+    height:fit-content;
+    margin-top: 5%;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    border-radius: 1.5vw;
+    font-size: 14px;
+    border-color: #ebe4d5;
+}
+
+
+#alertPopup{
+    background-color: #ebe4d5;
+    padding: 1.5vw;
+    width:fit-content;
+    height:fit-content;
+    font-family: 'Quicksand', sans-serif;
+    font-style: oblique;
+    font-size: 24px;
+    border-radius: 1.5vw;
 }
