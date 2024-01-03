@@ -105,7 +105,7 @@ $(document).ready(()=>{
 
                 $('#entryDataContainer').hide();
                 $('#deleteButton').hide();
-                $('#newEntryContainer').show();
+                $('#newEntryContainer').fadeIn(2000);
 
                 //to hide alertPopup after 2 seconds
                 $('#alertPopup').fadeOut(3000)
